@@ -12,7 +12,7 @@
  * }
  */
 
-import { addTwo } from "./add-two";
+import { getMetrics } from "./get-metrics";
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -23,6 +23,6 @@ if (window) {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     ...window.BFS,
-    addTwo,
+    getMetrics,
   };
 }

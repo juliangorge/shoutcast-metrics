@@ -47,5 +47,9 @@
     "prettier",
     "jest",
     "npm"
-  ]
+  ],
+  "dependencies": {
+    "fast-xml-parser": "^4.5.0",
+    "node-fetch": "^3.3.2"
+  }
 }
