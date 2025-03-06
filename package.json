@@ -1,9 +1,12 @@
 {
-  "name": "stream-metrics",
-  "version": "0.1.4",
+  "name": "@juliangorge/shoutcast-metrics",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/juliangorge/stream-metrics.git"
+    "url": "git+https://github.com/juliangorge/shoutcast-metrics.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "author": "juliangorge <juliangorge@hotmail.com>",
   "license": "MIT",
