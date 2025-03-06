@@ -1,7 +1,10 @@
 {
   "name": "stream-metrics",
   "version": "0.1.0",
-  "repository": "https://github.com/juliangorge/stream-metrics",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliangorge/stream-metrics.git"
+  },
   "author": "juliangorge <juliangorge@hotmail.com>",
   "license": "MIT",
   "type": "module",
