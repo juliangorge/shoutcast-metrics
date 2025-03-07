@@ -13,22 +13,25 @@
   "type": "module",
   "main": "./dist/cjs/index.js",
   "types": "./dist/types/index.d.ts",
+  "module": "./dist/esm/index.js",
   "exports": {
-    "import": {
-      "types": "./dist/types/index.d.ts",
-      "default": "./dist/esm/index.js"
-    },
-    "require": {
-      "types": "./dist/types/index.d.ts",
-      "default": "./dist/cjs/index.js"
+    ".": {
+      "import": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
     }
   },
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
     "local": "nodemon --watch src -e ts --exec npm run build",
-    "build:cjs-min": "esbuild `find src \\( -name '*.ts' ! -name '*.spec.ts' ! -name '*.test.ts' \\)` --minify --outdir=dist/cjs --platform=node --sourcemap --format=cjs --keep-names --target=esnext",
-    "build:esm-min": "esbuild `find src \\( -name '*.ts' ! -name '*.spec.ts' ! -name '*.test.ts' \\)` --minify --outdir=dist/esm --platform=node --sourcemap --format=esm --keep-names --target=esnext",
+    "build:cjs-min": "esbuild `find src \\( -name '*.ts' ! -name '*.spec.ts' ! -name '*.test.ts' \\)` --minify --outdir=dist/cjs --platform=node --sourcemap --format=cjs --keep-names --target=esnext --out-extension:.js",
+    "build:esm-min": "esbuild `find src \\( -name '*.ts' ! -name '*.spec.ts' ! -name '*.test.ts' \\)` --minify --outdir=dist/esm --platform=node --sourcemap --format=esm --keep-names --target=esnext --out-extension:.js",
     "build:browser": "esbuild src/client.ts --bundle --minify --keep-names --sourcemap --target=esnext --outfile=dist/client.min.js",
     "build": "rm -rf dist && npm-run-all lint test && tsc --emitDeclarationOnly && npm-run-all build:cjs-min build:esm-min build:browser",
     "lint": "eslint ./src && prettier --check .",
