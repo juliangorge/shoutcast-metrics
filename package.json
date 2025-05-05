@@ -66,7 +66,7 @@
     "npm"
   ],
   "dependencies": {
-    "fast-xml-parser": "^5.2.0",
+    "fast-xml-parser": "^5.2.2",
     "node-fetch": "^3.3.2"
   },
   "files": [
